@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Sharon Kutta ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0; min-height:100vh; display:flex; justify-content:center; align-items:center;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ background:linear-gradient(135deg,#ffd6e7,#fff0f5,#ffd1dc);
+ color:#5a2638; overflow:hidden;
+}
+.card{
+ width:min(92%,430px); padding:32px 24px; text-align:center;
+ background:rgba(255,255,255,.78); backdrop-filter:blur(12px);
+ border-radius:30px; box-shadow:0 15px 45px rgba(130,40,70,.18);
+}
+h1{font-size:32px;margin:5px 0 10px}
+h2{font-size:25px;margin:18px 0 8px}
+p{font-size:17px;line-height:1.6}
+.heart{font-size:55px;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+button{
+ border:0;border-radius:30px;padding:14px 24px;margin:8px;
+ font-size:16px;font-weight:700;cursor:pointer;
+}
+.yes{background:#ff4f81;color:white}
+.no{background:#eee;color:#555;position:relative}
+.hidden{display:none}
+.small{font-size:14px;opacity:.75}
+#final{font-size:28px;font-weight:800}
+.heartfloat{
+ position:fixed;bottom:-30px;font-size:24px;animation:float 5s linear forwards;
+}
+@keyframes float{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<div class="card" id="main">
+<div class="heart">❤️</div>
+
+<h1>Sharon kutta 🥺</h1>
+<p>Okay… Megha kutty has something VERY important to say.</p>
+
+<button class="yes" onclick="start()">Tap if you are ready 🥺</button>
+
+<div id="message" class="hidden">
+<h2>I AM SORRY KUTTA 🥺❤️</h2>
+
+<p>
+I am really sorry, kutta.<br>
+I love you so much. ❤️
+</p>
+
+<p>
+You are my favourite kutta.<br>
+And honestly…
+</p>
+
+<h2>Ente chakkaravava ara? 🥺</h2>
+<p><b>SHARON KUTTA, OBVIOUSLY. ❤️</b></p>
+
+<p>
+I know I messed up, and I'm genuinely sorry.
+I don't want you to stay angry with your Megha kutty. 🥺
+</p>
+
+<h2>Will you forgive me? 🥺</h2>
+
+<button class="yes" onclick="forgive()">YES, I FORGIVE YOU ❤️</button>
+<button class="no" id="noBtn">NO 😤</button>
+</div>
+
+<div id="final" class="hidden">
+YAYYYYY 😭❤️
+<p>Come here, Sharon kutta. 🫂</p>
+<p>Ente chakkaravava ara?</p>
+<p>YOU ARE. ❤️</p>
+</div>
+
+<p class="small">Made with love by Megha kutty 💕</p>
+</div>
+
+<script>
+function start(){
+ document.getElementById("message").classList.remove("hidden");
+}
+function forgive(){
+ document.getElementById("message").classList.add("hidden");
+ document.getElementById("final").classList.remove("hidden");
+ for(let i=0;i<35;i++){
+  setTimeout(()=>{
+   let h=document.createElement("div");
+   h.className="heartfloat";
+   h.innerHTML=["❤️","💕","💗","💖","🥺"][Math.floor(Math.random()*5)];
+   h.style.left=Math.random()*100+"vw";
+   h.style.animationDuration=(3+Math.random()*3)+"s";
+   document.body.appendChild(h);
+   setTimeout(()=>h.remove(),6000);
+  },i*80);
+ }
+}
+const no=document.getElementById("noBtn");
+no.addEventListener("mouseover",move);
+no.addEventListener("touchstart",move);
+function move(){
+ no.style.position="fixed";
+ no.style.left=Math.random()*75+"vw";
+ no.style.top=Math.random()*75+"vh";
+}
+</script>
+
+</body>
+</html>
